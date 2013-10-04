@@ -1,0 +1,32 @@
+package ar.com.scanbuy.payment.authserver.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import ar.com.scanbuy.payment.authserver.model.statics.Authentication;
+import ar.com.scanbuy.payment.authserver.model.statics.ResponseAuth;
+import ar.com.scanbuy.payment.authserver.model.statics.ResponseSession;
+import ar.com.scanbuy.payment.authserver.service.SessionService;
+
+@Controller
+public class RESTController {
+
+	@Autowired
+	private SessionService sessionService;
+	
+	
+	@RequestMapping(value="/auth/validateSession/{idSession}", method = RequestMethod.GET)
+	public @ResponseBody ResponseAuth validateSession(@PathVariable("idSession") String idSession) {		
+		return sessionService.validateSession(idSession);
+	}
+	
+	@RequestMapping(value="/auth/generateSession/{authentication}", method = RequestMethod.GET)
+	public @ResponseBody ResponseSession generateSession(@PathVariable("authentication") Authentication authentication) {		
+		return sessionService.generateSession(authentication);
+	}
+	
+}
