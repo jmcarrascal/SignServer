@@ -6,8 +6,8 @@ import ar.gob.onti.ventanilla.ws.model.VentanillaResponse;
 
 public interface ValidateCertificateService {
 
-	VentanillaResponse verifyCertificates(byte[] documento,
-			Usuario usuarioValido);
+    VentanillaResponse verifyCertificates(byte[] documento,
+                                          Usuario usuarioValido);
 
 
 }

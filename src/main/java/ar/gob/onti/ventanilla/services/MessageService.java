@@ -6,8 +6,8 @@ import ar.gob.onti.ventanilla.ws.model.VentanillaResponse;
 
 public interface MessageService {
 
-	public Mensaje buildMessage(Integer idAuthFailed);
-	
-	public VentanillaResponse buildErrorVentanillaResponse(Integer idAuthFailed);
+    public Mensaje buildMessage(Integer idAuthFailed);
+
+    public VentanillaResponse buildErrorVentanillaResponse(Integer idAuthFailed);
 
 }

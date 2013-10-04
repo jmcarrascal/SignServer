@@ -5,6 +5,6 @@ import ar.gob.onti.ventanilla.ws.model.VentanillaResponse;
 
 public interface SignDocumentService {
 
-	VentanillaResponse signDocument(VentanillaRequest ventanillaRequest);
+    VentanillaResponse signDocument(VentanillaRequest ventanillaRequest);
 
 }
